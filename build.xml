@@ -53,7 +53,7 @@
 
         <!-- download the core -->
         <exec command="git clone git://github.com/zikula/core.git ${builddir}/tmp/core" />
-        <exec command="cd ${builddir}/tmp/core; git fetch --tags origin master; git checkout origin/master; find -type d -iname .git | xargs rm -rf" />
+        <exec command="cd ${builddir}/tmp/core; git checkout origin/master; find -type d -iname .git | xargs rm -rf" />
         <exec command="chmod 755 ${builddir}/tmp/core/bin/vendor;${builddir}/tmp/core/bin/vendor install --transport=git" />
         <exec command="mv ${builddir}/tmp/core/src ${packagepath}" />
 
@@ -74,7 +74,7 @@
         <exec command="mv ${builddir}/tmp/Clip/src/modules/Clip ${packagepath}/modules" />
 
         <exec command="git clone git://github.com/zikula-modules/Scribite ${builddir}/tmp/Scribite" />
-        <exec command="cd ${builddir}/tmp/Scribite; git checkout release-4.3" />
+        <exec command="cd ${builddir}/tmp/Scribite; git checkout origin/release-4.3" />
         <exec command="mv ${builddir}/tmp/Scribite/src/modules/Scribite ${packagepath}/modules" />
         <!-- remove editors, we're using xihna -->
         <exec command="rm -rf ${packagepath}/modules/Scribite/includes/ckeditor" />
@@ -97,7 +97,7 @@
         <exec command="mv ${builddir}/tmp/Captcha/src/modules/Captcha ${packagepath}/modules" />
 
         <exec command="git clone git://github.com/zikula-modules/EZComments ${builddir}/tmp/EZComments" />
-        <exec command="cd ${builddir}/tmp/EZComments; git fetch origin release-3.0.x; git checkout v3.0.0" />
+        <exec command="cd ${builddir}/tmp/EZComments; git checkout v3.0.0" />
         <exec command="mv ${builddir}/tmp/EZComments/src/modules/EZComments ${packagepath}/modules" />
 
         <!-- compress JS -->
