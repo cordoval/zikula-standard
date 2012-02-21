@@ -53,7 +53,7 @@
 
         <!-- download the core -->
         <exec command="git clone git://github.com/zikula/core.git ${builddir}/tmp/core" />
-        <exec command="cd ${builddir}/tmp/core; git checkout origin/master; find -type d -iname .git | xargs rm -rf" />
+        <exec command="cd ${builddir}/tmp/core; git checkout origin/master;" />
         <exec command="chmod 755 ${builddir}/tmp/core/bin/vendor;${builddir}/tmp/core/bin/vendor install --transport=git" />
         <exec command="mv ${builddir}/tmp/core/src ${packagepath}" />
 
